@@ -30,7 +30,7 @@ if(get_magic_quotes_gpc()) {
 	$comments = stripslashes($comments);
 }
 
-$address = "info@titaniacompany.com,espositosalvatore.jobs@gmail.com";
+$address = "info@titaniacompany.com";
 $e_subject = 'TITANIA Company | Sei stato contattato da ' . $name . '.';
 
 $e_body = "Sei stato contattato da $name, il suo messaggio è il seguente." . PHP_EOL . PHP_EOL;

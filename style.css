@@ -30,6 +30,8 @@ Primary use:	Showcase Portfolio
 	01. General Settings
 ---------------------------------------------------*/
 
+.d-block {display: block !important;}
+
 	html,body{
 		font-family: 'Poppins', sans-serif;
 		font-weight: 300;
@@ -542,7 +544,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	h2{
-		font-size: 36px;
+		font-size: 44px;
 		line-height: 48px;
 	}
 	
@@ -559,7 +561,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	h5{
-		font-size:18px;
+		font-size:14px;
 		line-height: 28px;
 		margin-left:-1px;
 	}
@@ -590,7 +592,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	.light-content .white-section p {
-		color: #999;
+		color: #232323;
 	}
 	
 	.title-has-line {
@@ -1323,7 +1325,7 @@ Primary use:	Showcase Portfolio
 		position: fixed;
 		top: 0; 
 		bottom: 0;
-		background: #000;
+		background: #030b13;
 		z-index : 1500;
 		text-align:center;
 	}
@@ -1470,6 +1472,22 @@ Primary use:	Showcase Portfolio
 		transition: background 0s ease-in-out 0s;
 		/*mix-blend-mode: exclusion;*/
 	}
+
+	header.classic-menu.home::before {
+		--tw-gradient-from: #030b13;
+		--tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to,rgba(0,0,0,0));
+		--tw-gradient-stops: var(--tw-gradient-from),#030b13, #030b13, var(--tw-gradient-to,rgba(0,0,0,0));
+		--tw-gradient-to: transparent;
+		background-image: linear-gradient(to bottom, #030b13, var(--tw-gradient-to,rgba(0,0,0,0)));
+		content: "";
+		height: 150%;
+		left: 0;
+		opacity: .95;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 10;
+	}
 	
 	header.over-white-section {
 		mix-blend-mode: normal;
@@ -1504,7 +1522,7 @@ Primary use:	Showcase Portfolio
 		display: table;
 		pointer-events: initial;
 		z-index: 10;
-		top: 15px;
+		top: 0;
 		float: left;
 	}
 	
@@ -1525,7 +1543,6 @@ Primary use:	Showcase Portfolio
 	
 	#logo img {
 		display: block;
-		height: 50px;
 		width: auto;
 		max-width:none;
 		-webkit-transition: opacity 0.2s ease-in-out 0s;
@@ -1535,8 +1552,7 @@ Primary use:	Showcase Portfolio
 	#logo img.black-logo {
 		opacity:1;
 		width: 100%;
-		max-width: 226px;
-		min-height: 100px;
+		max-width: 80px;
 	}
 	
 	.light-content #logo img.black-logo {
@@ -1549,8 +1565,7 @@ Primary use:	Showcase Portfolio
 		left:0;
 		opacity:0;
 		width: 100%;
-		max-width: 226px;
-		min-height: 100px;
+		max-width: 100px;
 	}
 
 	
@@ -1662,7 +1677,7 @@ Primary use:	Showcase Portfolio
 			font-weight: 600;
 			font-family: 'Poppins', sans-serif;
 			color:#000;		
-			font-size:12px;
+			font-size:16px;
 			line-height:20px;
 			display:block;
 			overflow:hidden;
@@ -1687,7 +1702,7 @@ Primary use:	Showcase Portfolio
 		}
 		
 		.light-content  .classic-menu.white-header .flexnav:hover li a {
-			color: rgba(0,0,0,0.4);	
+			color: rgba(255,255,255,0.4);	
 		}
 		
 		.classic-menu .flexnav li:hover a {
@@ -1699,7 +1714,15 @@ Primary use:	Showcase Portfolio
 		}
 		
 		.light-content .classic-menu.white-header .flexnav li:hover a {
-			color:#000;
+			color:#fff;
+		}
+
+		.classic-menu.white-header .flexnav li:hover a {
+			color:#fff;
+		}
+
+		.classic-menu.white-header .flexnav li a { 
+			color:#fff;		
 		}
 	
 		.classic-menu .flexnav li a span {
@@ -1708,6 +1731,7 @@ Primary use:	Showcase Portfolio
 			-webkit-transition: -webkit-transform 0.2s;
 			transition: transform 0.2s;
 			transform-origin: 100% 0%;
+			text-transform: uppercase;
 		}
 		
 		.classic-menu .flexnav li a span::before {
@@ -2022,6 +2046,8 @@ Primary use:	Showcase Portfolio
 			width: 100%;
 			pointer-events: none;
 			left: 0;
+			margin-top: 3rem;
+
 		}
 		
 		.fullscreen-menu li.buy-item a {
@@ -2229,7 +2255,7 @@ Primary use:	Showcase Portfolio
 		transition: all 0.4s ease-in-out 0s;
 	}
 	
-	#main-page-content {
+	#main-page-content, .main-page-content {
 		position: relative;
 		box-sizing:border-box;
 		opacity: 0;
@@ -2240,17 +2266,17 @@ Primary use:	Showcase Portfolio
 		margin-bottom: 0;
 	}
 	
-	#main-page-content::after {
+	#main-page-content::after, .main-page-content::after {
 		clear: both;
 		content: " ";
 		display: table;
 	}
 	
-	#main-page-content.project-page {
+	#main-page-content.project-page, .main-page-content.project-page {
 		margin-bottom: calc(100vh - 140px);
 	}
 	
-	#main-page-content.portfolio-page {
+	#main-page-content.portfolio-page, .main-page-content.portfolio-page {
 		width:100%;
 		max-width:none;
 		padding:0;		
@@ -2540,7 +2566,8 @@ Primary use:	Showcase Portfolio
 	
 	#main .button-wrap.right {
 		float:left;
-		right:auto;			
+		right:auto;	
+		display: flex;		
 	}
 	
 	.icon-wrap {
@@ -2744,12 +2771,16 @@ Primary use:	Showcase Portfolio
     	padding: 20px;
 	}
 	
-	#main-page-content.project-page {
+	#main-page-content.project-page, .main-page-content.project-page {
 		margin-bottom: calc(100vh - 120px);
 	}
 	
-	#main-page-content {
-		padding: 0 60px;
+	#main-page-content, .main-page-content {
+		padding: 0;
+	}
+	
+	#main-page-content .vc_row h2, #main-page-content .vc_row p, #main-page-content .vc_row h1:not(.white-section-container .vc_row h1), #main-page-content .vc_row h5, #main-page-content .vc_row h4, .main-page-content .vc_row h2, .main-page-content .vc_row p, .main-page-content .vc_row h1:not(.white-section-container .vc_row h1), .main-page-content .vc_row h5, .main-page-content .vc_row h4 {
+		padding: 0 40px;
 	}
 	
 	.large .white-section-container, .large .dark-section-container {
@@ -2812,13 +2843,13 @@ Primary use:	Showcase Portfolio
 	}
 	
 	h1 {
-		font-size: 40px;
-		line-height: 50px;
+		font-size: 30px;
+		line-height: 0.7;
 	}
 	
 	h2 {
-		font-size: 30px;
-		line-height: 40px;
+		font-size: 1.5rem;
+		line-height: 0.8;
 	}
 	
 	.has-mask {
@@ -3077,8 +3108,13 @@ Primary use:	Showcase Portfolio
 		bottom: 40px;
 	}
 	
-	#main-page-content {
-		padding: 0 40px;
+	.main-page-content, #main-page-content {
+		padding: 0;
+	}
+
+		
+	#main-page-content .vc_row h2, #main-page-content .vc_row p, #main-page-content .vc_row h1:not(.white-section-container .vc_row h1), #main-page-content .vc_row h5, #main-page-content .vc_row h4, .main-page-content .vc_row h2, .main-page-content .vc_row p, .main-page-content .vc_row h1:not(.white-section-container .vc_row h1), .main-page-content .vc_row h5, .main-page-content .vc_row h4 {
+		padding: 0 20px;
 	}
 	
 	.large .white-section-container, .large .dark-section-container {
@@ -3168,6 +3204,10 @@ Primary use:	Showcase Portfolio
 
 
 @media only screen and (max-width: 767px) {	
+
+	.text-md-left{
+		text-align: left !important;
+	}
 	
 	.percentage {
 		font-size:60px;
@@ -3225,7 +3265,7 @@ Primary use:	Showcase Portfolio
 	}
 	
 	.flexnav li a {
-		font-size: 40px;
+		font-size: 26px;
 		line-height: 55px;
 	}
 	
@@ -3321,8 +3361,8 @@ Primary use:	Showcase Portfolio
     	font-size: 14px;
 	}
 	
-	#main-page-content {
-		padding: 0 30px;
+	.main-page-content, #main-page-content {
+		padding: 0;
 	}
 	
 	.large .white-section-container, .large .dark-section-container {
@@ -3415,6 +3455,14 @@ Primary use:	Showcase Portfolio
 
 
 @media only screen and (max-width: 479px) {	
+
+	.bigger {
+		text-align: center;
+		font-size: .875rem;
+		line-height: 1.75rem;
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
+	}
 	
 	.percentage {
 		font-size: 48px;
@@ -3461,6 +3509,7 @@ Primary use:	Showcase Portfolio
 	
 	#logo {
 		left: 20px;
+		max-width: 104px;
 	}
 	
 	.button-wrap.right.menu {
@@ -3485,8 +3534,8 @@ Primary use:	Showcase Portfolio
 		display:none;
 	}
 	
-	#main-page-content {
-		padding: 0 20px;
+	#main-page-content, .main-page-content {
+		padding: 0;
 	}
 	
 	.large .white-section-container, .large .dark-section-container {
@@ -3556,7 +3605,7 @@ Primary use:	Showcase Portfolio
 		display:none;
 	}
 	
-	#main-page-content .button-text {
+	#main-page-content .button-text, .main-page-content .button-text {
 		display:block;
 	}
 }
