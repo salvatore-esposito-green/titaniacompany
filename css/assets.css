@@ -1619,5 +1619,16 @@
 		height:8px;
 		margin:0 4px;
 		background-color:#fff;
-		border-radius:6px
+		border-radius:6px;
+	}
+/*--------------------------------------------------
+	Language
+---------------------------------------------------*/
+	.span-lang{
+		display: flex;
+		justify-content: center;
+	}
+	.image-lang {
+		margin-right: 4px;
+		align-self: center;
 	}
